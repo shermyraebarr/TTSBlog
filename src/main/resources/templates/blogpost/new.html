@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Create a New Blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/standard.css">
+  </head>
+  <body>
+    <div th:replace="fragments/navbar :: navbar" ></div>
+    <div class="container">
+		<h1>Create a New Blog Post</h1>
+ 		<form action="#" th:action="@{/blogposts}" th:object="${blogPost}" method="post">
+ 		
+ 		<div class="form-group">
+ 			<input type="text" class="form-control" placeholder="Blog Title..." th:field="*{title}" />
+ 		</div>
+ 		
+ 		<div class="form-group">
+ 			<input type="text" class="form-control" placeholder="Your Name Here..." th:field="*{author}" />
+ 		</div>
+ 		
+ 		<div class="form-group">
+ 			<input type="text" class ="form-control" placeholder="Blog Entry" th:field="*{blogEntry}" />
+ 		</div>
 
-<head>
-  <title>Blog Site</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-</head>
+ 		<button class="btn btn-primary">Submit Your Post</button>
+        </form>
 
-<body>
-  <div th:replace="fragments/navbar :: navbar" ></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h1>Deleted blog post with id:  <span th:text="${id}"></span></h1>
-          </div>
-          <div class="panel-footer">
-            <!-- Link to Update -->
-            <!-- Link to Show  -->
-            <!--  Link to Destroy -->
-            <a th:href="@{/}"><button class="btn btn-success">Back To Home Page</button></a>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
-</body>
-
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+  </body>
 </html>

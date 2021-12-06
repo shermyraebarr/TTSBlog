@@ -32,9 +32,12 @@
              <div class="form-group">
               <input type="hidden" name="_method" value="delete" />
               <button type="submit" class="btn btn-danger btn-block" 
-                th:text="Delete">Delete</button>
+                th:text="Delete">Delete Post</button>
             </div>
             </form>
+            <a href="#" th:href="@{'/blogposts/{id}'(id=${blog.id})}">
+              <button class="btn btn-block">Edit Post</button>
+          </a>
             </div>
           </div>
         </div>
